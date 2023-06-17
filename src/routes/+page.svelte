@@ -14,6 +14,12 @@ async function lazyMint() {
     const signer = await provider.getSigner();
     
     const sdk = ThirdwebSDK.fromSigner(signer);
+
+    // Connect to your smart contract using the contract address
+    const contract = await sdk.getContract(contractAddress);
+
+    const txResult = await contract.erc721.claim(1);
+    
 }
 
 </script>
